@@ -26,19 +26,19 @@ def TWD97ToWGS84(X97, Y97):
 
 if __name__ == '__main__':
     
-    year = '102'
+    year = '100'
     with open( year + 'y_twd97.csv', 'r') as file, open(year,'w') as out:
         next(file)
         count = 0
         intersections = []
         infos = []
-        infos.append(['CASE_NO','IEOK_01,ACCD_TP','Year,x_coord','y_coord',
+        infos.append(['CASE_NO','IEOK_01','ACCD_TP','Year','x_coord','y_coord',
                      'Rd_id','Latitude','Longitude','Rd1_sp','Rd2_sp',
                      'Rd1_1_lane','Rd1_2_lane','Rd2_1_lane','Rd2_2_lane','lane_id','year',
-                     'Big1_1_AM','Small1_1_AM','Scooter1_1_AM','PCU1_1_AM','Trun1_1_AM',
-                     'Big1_2_AM','Small1_2_AM','Scooter1_2_AM','PCU1_2_AM','Trun1_2_AM',
-                     'Big2_1_AM','Small2_1_AM','Scooter2_1_AM','PCU2_1_AM','Trun2_1_AM',
-                     'Big2_2_AM','Small2_2_AM','Scooter2_2_AM','PCU2_2_AM','Trun2_2_AM'])
+                     'Big1_1','Small1_1','Scooter1_1','PCU1_1','Trun1_1',
+                     'Big1_2','Small1_2','Scooter1_2','PCU1_2','Trun1_2',
+                     'Big2_1','Small2_1','Scooter2_1','PCU2_1','Trun2_1',
+                     'Big2_2','Small2_2','Scooter2_2','PCU2_2','Trun2_2'])
         
         
         '''
@@ -59,6 +59,7 @@ if __name__ == '__main__':
         
         
         for accident in csv.reader(file):
+            #print type(accident[4])
             x67 = float(accident[4])
             y67 = float(accident[5])
             time = int(accident[1])%1000
@@ -86,3 +87,9 @@ if __name__ == '__main__':
         
         
         
+    
+
+
+
+
+
