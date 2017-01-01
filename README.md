@@ -13,8 +13,8 @@ Rd1_1_lane:RD1_1車道數
 Rd1_2_lane:
 Rd2_1_lane:
 Rd2_2_lane:
-lane_id:(RD1_1RD1_2RD2_1RD2_2) just for me
-year:資料年份 just for me
+lane_id:(RD1_1RD1_2RD2_1RD2_2) (just for me)
+year:資料年份 (just for me)
 Big1_1:大車比例
 Small1_1:小車比例
 Scooter1_1:機車比例
