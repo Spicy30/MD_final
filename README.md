@@ -19,6 +19,7 @@ Longitude:經度
 Rd1_sp:Rd1速度 
 
 Rd2_sp:
+
 Rd1_1_lane:RD1_1車道數
 
 Rd1_2_lane:
