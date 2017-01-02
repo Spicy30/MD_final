@@ -10,7 +10,7 @@ x_coord:X座標(TWD67座標)
 
 y_coord:Y座標(TWD67座標)
 
-Rd_id:
+Rd_id:路口id
 
 Latitude:緯度
 
@@ -18,15 +18,15 @@ Longitude:經度
 
 Rd1_sp:Rd1速度 
 
-Rd2_sp:
+Rd2_sp:Rd2速度
 
-Rd1_1_lane:RD1_1車道數
+Rd1_1_lane:Rd1_1車道數
 
-Rd1_2_lane:
+Rd1_2_lane:Rd1_2車道數
 
-Rd2_1_lane:
+Rd2_1_lane:Rd2_1車道數
 
-Rd2_2_lane:
+Rd2_2_lane:Rd2_2車道數
 
 lane_id:(RD1_1RD1_2RD2_1RD2_2) (just for me)
 
@@ -38,7 +38,7 @@ Small1_1:小車比例
 
 Scooter1_1:機車比例
 
-PCU1_1:
+PCU1_1:PCU
 
 Trun1_1:轉向比例
 
@@ -71,3 +71,11 @@ Scooter2_2:
 PCU2_2:
 
 Trun2_2:
+
+
+
+PS:
+
+	Rd1 分成 Rd1_1,Rd1_2(東西向)
+
+	Rd2 分成 Rd2_1,Rd2_2(南北向)
