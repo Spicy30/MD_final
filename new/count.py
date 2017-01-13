@@ -26,19 +26,13 @@ def TWD97ToWGS84(X97, Y97):
 
 if __name__ == '__main__':
     
-    year = '100'
-    with open( year + 'y_twd97.csv', 'r') as file, open(year,'w') as out:
+    year = '102'
+    with open( '../'+ year + 'y_twd97.csv', 'r') as file, open(year + '_count.txt','w') as out:
         next(file)
         count = 0
         intersections = []
         infos = []
-        infos.append(['CASE_NO','IEOK_01','ACCD_TP','Year','x_coord','y_coord',
-                     'Rd_id','Latitude','Longitude','Rd1_sp','Rd2_sp',
-                     'Rd1_1_lane','Rd1_2_lane','Rd2_1_lane','Rd2_2_lane','lane_id','year',
-                     'Big1_1','Small1_1','Scooter1_1','PCU1_1','Trun1_1',
-                     'Big1_2','Small1_2','Scooter1_2','PCU1_2','Trun1_2',
-                     'Big2_1','Small2_1','Scooter2_1','PCU2_1','Trun2_1',
-                     'Big2_2','Small2_2','Scooter2_2','PCU2_2','Trun2_2'])
+        infos.append(['Intersection_id','AM_count','PM_count'])
         
         
         '''
@@ -50,10 +44,11 @@ if __name__ == '__main__':
                 intersections.append([x,y])
         '''
         
-        with open('intersection_no_ch.txt','r') as posfile:
+        with open('../intersection_no_ch.txt','r') as posfile:
             next(posfile)
             for intersection in csv.reader(posfile,delimiter=','):
                 intersections.append(intersection)
+                infos.append([intersection[0],0,0])
         #print(intersections)
         
         
@@ -74,13 +69,13 @@ if __name__ == '__main__':
                 if (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2) < 9:
                     count += 1
                     if time > 1200:
-                        info = accident + intersection[0:10] + intersection[11:30]
+                        infos[int(intersection[0])][1] += 1
                     else:
-                        info = accident + intersection[0:10] + intersection[31:50]
-                    infos.append(info)
+                        infos[int(intersection[0])][2] += 1
+                    
                     break
         print(count)
-        #print(infos)
+        print(infos)
         
         
         csv.writer(out).writerows(infos)
@@ -88,6 +83,7 @@ if __name__ == '__main__':
         
         
     
+
 
 
 
