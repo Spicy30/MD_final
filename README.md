@@ -33,6 +33,18 @@ road.txt
 
 
 info.txt
+(針對每個案件(CASE_NO)對應到哪個路口(Rd_id),當時路口的四條路(Rd1_1,Rd1_2,Rd2_1,Rd2_2)的狀況(Big,Small,Scooter,PCU,Trun))
+		|Rd2_2|
+		|	  |
+-------        --------
+Rd1_1 			  Rd1_2    (Rd1)
+-------		   --------
+		|     |
+		|Rd2_1|
+
+		  Rd2
+
+跟東西南北無關
 
 	CASE_NO:案件編號
 
@@ -42,17 +54,17 @@ info.txt
 
 	Year:年度 
 
-	x_coord:X座標(TWD67座標) 
+	x_coord:X座標(TWD67座標)	(事故的X座標)
 
-	y_coord:Y座標(TWD67座標)
+	y_coord:Y座標(TWD67座標)	(事故的Y座標)
 
-	Rd_id:路口id
+	Rd_id:路口id				(事故對應的路口)
 
-	Latitude:緯度
+	Latitude:緯度			(事故對應的路口的緯度)
 
-	Longitude:經度
+	Longitude:經度			(事故對應的路口的經度)
 
-	Rd1_sp:Rd1速度 
+	Rd1_sp:Rd1速度			
 
 	Rd2_sp:Rd2速度
 
