@@ -34,12 +34,17 @@ with open('../new/102_count_reduced.txt') as f:
         tY.append(int(line[:-1].split(',')[2]))
 
 feature_size = len(features_idx_AM)
+
 X = np.array(X, dtype=np.float32)
+X = X / X.sum(axis=0)
 Y = np.array(Y, dtype=np.float32)
 Y = Y / Y.sum()
+
 tX = np.array(tX, dtype=np.float32)
+tX = tX / tX.sum(axis=0)
 tY = np.array(tY, dtype=np.float32)
 tY = tY / tY.sum()
+
 print X
 print Y
 print X.shape, Y.shape
@@ -48,6 +53,8 @@ print ''
 regr = linear_model.LinearRegression()
 regr.fit(X, Y)
 #print 'coefficients:', regr.coef_
+
+np.set_printoptions(suppress=True)
 
 # predict training data
 pred_train = regr.predict(X)
